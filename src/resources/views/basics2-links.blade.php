@@ -1,0 +1,9 @@
+<a href="{{ route('basics-2.functions') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.functions', $basics2) ? '&#9989;' : '' !!} Funktioner</div></a>
+<a href="{{ route('basics-2.lists') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.lists', $basics2) ? '&#9989;' : '' !!} Listor</div></a>
+<a href="{{ route('basics-2.for') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.for', $basics2) ? '&#9989;' : '' !!} Repetitioner med for-satsen</div></a>
+<a href="{{ route('basics-2.more-print') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.more-print', $basics2) ? '&#9989;' : '' !!} Mer om print och annat</div></a>
+<a href="{{ route('basics-2.more-lists') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.more-lists', $basics2) ? '&#9989;' : '' !!} Mer om listor</div></a>
+<a href="{{ route('basics-2.tuples') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.tuples', $basics2) ? '&#9989;' : '' !!} Tupler</div></a>
+<a href="{{ route('basics-2.math') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.math', $basics2) ? '&#9989;' : '' !!} Matematiska funktioner</div></a>
+<a href="{{ route('basics-2.dictionary') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.dictionary', $basics2) ? '&#9989;' : '' !!} Lexikon (dictionary)</div></a>
+<a href="{{ route('basics-2.set') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('basics-2.set', $basics2) ? '&#9989;' : '' !!} Mängder (set)</div></a>

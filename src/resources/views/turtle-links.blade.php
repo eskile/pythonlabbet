@@ -1,0 +1,8 @@
+<a href="{{ route('turtle.introduction') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.introduction', $turtle) ? '&#9989;' : '' !!} Introduktion till turtle</div></a>
+<a href="{{ route('turtle.circles') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.circles', $turtle) ? '&#9989;' : '' !!} Rita cirklar</div></a>
+<a href="{{ route('turtle.variables-repetition') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.variables-repetition', $turtle) ? '&#9989;' : '' !!} Variabler och repetitioner</div></a>
+<a href="{{ route('turtle.functions') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.functions', $turtle) ? '&#9989;' : '' !!} Funktioner</div></a>
+<a href="{{ route('turtle.random') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.random', $turtle) ? '&#9989;' : '' !!} Rita med slumpen</div></a>
+<a href="{{ route('turtle.coordinates') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.coordinates', $turtle) ? '&#9989;' : '' !!} Koordinatsystemet</div></a>
+<a href="{{ route('turtle.tasks') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.tasks', $turtle) ? '&#9989;' : '' !!} Fler uppgifter</div></a>
+<a href="{{ route('turtle.recursion-fractals') }}"><div class="border my-2 p-2 shadow-sm hover:shadow text-green-500">{!! in_array('turtle.recursion-fractals', $turtle) ? '&#9989;' : '' !!} Överkurs: Rekursion och fraktaler</div></a>
