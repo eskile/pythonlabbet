@@ -8,6 +8,8 @@ It is written in Laravel, with some javascript and Skulpt is used for running Py
 
 Feel free to fork this repo if you want to translate it for any other language.
 
+Check it out at [pythonlabbet.se](https://pythonlabbet.se)
+
 ## Om Pythonlabbet
 Pythonlabbet är skrivet i Laravel med en del javascript och använder Skulpt för att tolka Pythonkod. Koden körs i användarens webbläsare vilket gör det mycket responsivt. Det finns ett par kurser med runt 10 avsnitt var. Varje avsnitt består av att antal uppgifter som användaren måste klara av för att få en grön bock. Det finns också ett antal fristående problem.
 
@@ -50,7 +52,7 @@ i botten finns ett länk till ett problem där användaren kan öva mer. Det beh
 
 ### Lägg till din egen kurs
 
-[Instruktion för att lägga upp ett eget problem](documentation/ADD-COURSE.md)
+[Instruktion för att lägga upp en ny kurs](documentation/ADD-COURSE.md)
 
 ### Allmänna tips
 I filen templates.blade.php finns kodsnuttar för diverse olika saker som kan vara användbara.

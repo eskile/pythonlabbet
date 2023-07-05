@@ -34,7 +34,7 @@
                     @case(3)
                     <div class="w-10 h-2 bg-red-500"></div>
                     @break
-                    @case(3)
+                    @case(4)
                     <div class="w-10 h-2 bg-black"></div>
                     @break
                 @endswitch
