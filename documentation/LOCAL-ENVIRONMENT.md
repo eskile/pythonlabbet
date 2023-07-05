@@ -24,17 +24,17 @@ Om det uppstår problem i det här steget, prova att googla eller att starta en 
 
 3. Från `/src` bör du nu kunna köra följande kommando:
 
-`./vendor/bin/sail artisan migrate` - skapar tabeller i databasen
+```./vendor/bin/sail artisan migrate``` - skapar tabeller i databasen
 
-`./vendor/bin/sail artisan command:seed` - kör SeedDatabase.php som initialiserar databasen
+```./vendor/bin/sail artisan command:seed``` - kör SeedDatabase.php som initialiserar databasen
 
-`./vendor/bin/sail npm install --force` - installerar node_modules
+```./vendor/bin/sail npm install --force``` - installerar node_modules
 
-`./vendor/bin/sail npm run dev` - skapar app.js och app.css
+```./vendor/bin/sail npm run dev``` - skapar app.js och app.css
 
 Nu ska allt vara klart och du kan köra
 
-`./vendor/bin/sail up` för att starta och sedan komma åt din lokala Pythonlabbet på [0.0.0.0](http://0.0.0.0)
+```./vendor/bin/sail up``` för att starta och sedan komma åt din lokala Pythonlabbet på [0.0.0.0](http://0.0.0.0)
 
 Läs mer om [Laravel Sail](https://laravel.com/docs/8.x/sail)
 
