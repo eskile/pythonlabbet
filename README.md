@@ -52,6 +52,8 @@ i botten finns ett länk till ett problem där användaren kan öva mer. Det beh
 
 ### Lägg till din egen kurs
 
+Ta gärna kontakt först innan du bestämmer dig för att bygga en ny kurs.
+
 [Instruktion för att lägga upp en ny kurs](documentation/ADD-COURSE.md)
 
 ### Allmänna tips

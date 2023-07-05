@@ -39,6 +39,6 @@ Nu ska allt vara klart och du kan köra
 Läs mer om [Laravel Sail](https://laravel.com/docs/8.x/sail)
 
 ## Andra metoder
-För Mac OS finns [Laravel Valet](https://laravel.com/docs/8.x/valet) och för Windows/Linux finns (Laravel Homestead)[https://laravel.com/docs/8.x/homestead].
+För Mac OS finns [Laravel Valet](https://laravel.com/docs/8.x/valet) och för Windows/Linux finns [Laravel Homestead](https://laravel.com/docs/8.x/homestead).
 
 En annan metod (troligen besvärligt) kan såklart vara att installera allt lokalt på sin dator också.
