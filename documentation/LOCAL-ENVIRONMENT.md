@@ -24,6 +24,8 @@ Om det uppstår problem i det här steget, prova att googla eller att starta en 
 
 3. Från `/src` bör du nu kunna köra följande kommando:
 
+```./vendor/bin/sail up``` - starta upp alla docker containers
+
 ```./vendor/bin/sail artisan migrate``` - skapar tabeller i databasen
 
 ```./vendor/bin/sail artisan command:seed``` - kör SeedDatabase.php som initialiserar databasen
@@ -32,8 +34,9 @@ Om det uppstår problem i det här steget, prova att googla eller att starta en 
 
 ```./vendor/bin/sail npm run dev``` - skapar app.js och app.css
 
-Nu ska allt vara klart och du kan köra
+Nu ska det fungera att komma åt Pythonlabbet på [127.0.0.1](http://127.0.0.1)! 
 
+Senare räcker det att skriva
 ```./vendor/bin/sail up``` för att starta och sedan komma åt din lokala Pythonlabbet på [0.0.0.0](http://0.0.0.0)
 
 Läs mer om [Laravel Sail](https://laravel.com/docs/8.x/sail)
