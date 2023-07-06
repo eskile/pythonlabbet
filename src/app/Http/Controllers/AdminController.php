@@ -26,6 +26,7 @@ class AdminController extends Controller
         $feedback = Feedback::where('created_at','>',Carbon::now()->subDays(7) )->orderBy('created_at', 'DESC')->get();
         $problems = SolvedProblem::where('created_at','>',Carbon::now()->subDays(7) )->orderBy('created_at', 'DESC')->get();
         echo '<p>Användare: '. count($users) .' Sektioner: '. count($completed) .' Feedback: '. count($feedback) . ' Problem: ' . count($problems) . '</p>';
+        echo '<p><a href="/admin/users">Användare</a></p>';
         echo '<p><a href="/admin/teachers">Lärare</a></p>';
         //$users = User::orderBy('created_at','DESC')->take(10)->get();
         echo '<h2>Users last week (' . count($users) .')</h2>';
@@ -205,55 +206,17 @@ class AdminController extends Controller
 
     public function errorFix() { //done - can be removed
 
-        $users = DB::table('users')->select('id')->get();
-        $sections = DB::table('sections')->select('name')->get();
-        Log::debug($sections);
-        $nr_errors = 0;
-        foreach($users as $user) {
-            foreach($sections as $section) {
-                $nr_section_quizes = DB::table('quiz_infos')->where('section',$section->name)->pluck('code_id')->count();
-                $nr_section_tasks = DB::table('task_infos')->where('section',$section->name)->pluck('code_id')->count();
-                //echo $user->id . ' ' . $section->name . '<br>';
+    }
 
-                $nr_answers = DB::table('answers')
-                    ->where('user_id',$user->id)
-                    ->where('solved', true)
-                    ->join('quiz_infos','answers.code_id','=','quiz_infos.code_id')
-                    ->where('quiz_infos.section',$section->name)
-                    ->count();
-                $nr_tasks = DB::table('tasks')
-                    ->where('user_id',$user->id)
-                    ->where('completed',true)
-                    ->join('task_infos','tasks.code_id','=','task_infos.code_id')
-                    ->where('task_infos.section',$section->name)
-                    ->count();
-                if($nr_section_quizes == $nr_answers && $nr_section_tasks == $nr_tasks)
-                {
-                    $record = Completed::where('user_id',$user->id)->where('section',$section->name)->first();
-                    if(!$record) {
-                        echo 'Error found for user ' . $user->id . '<br>'; 
-                        $nr_errors += 1;
-                        Completed::firstOrCreate(
-                            ['user_id' => $user->id, 'section' => $section->name]
-                        );
-                    }
-                    
-                }
+    public function usersPaginated(Request $request) {
+        $users = DB::table('users')->orderBy('created_at', 'DESC')->simplePaginate(100);
+        return view('admin/users', ['users' => $users]);
+    }
 
-            }
-            
-        }
-        echo 'Errors corrected: ' . $nr_errors;
-
-
-        /*$completed = DB::table('completed')->where('section','turtle.coordinates')->select('user_id')->get();
-        foreach($completed as $complete) {
-            echo $complete->user_id . '<br>';
-            Answer::updateOrCreate(
-                ['code_id' => 'turtle-coordinates-predict', 'user_id' => $complete->user_id],
-                ['answer' => 3, 'solved' => 1]
-            );
-        }*/
+    public function makeTeacher(Request $request) {
+        $user_id = $request->route('user_id');
+        $user = DB::table('users')->where('id', $user_id)->first();
+        return view('admin/make-teacher', ['user' => $user]);
     }
 
 }

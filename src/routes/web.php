@@ -238,7 +238,9 @@ Route::get('/admin/teacher-feedback', [AdminController::class, 'teacherFeedback'
 Route::get('/admin/feedback', [AdminController::class, 'feedback'])->middleware('only.admin');
 Route::get('/admin/update-solutions', [AdminController::class, 'updateSolutions'])->middleware('only.admin');
 Route::get('/admin/login/{user_id}', [AdminController::class, 'login'])->middleware('only.admin');
+Route::get('/admin/users', [AdminController::class, 'usersPaginated'])->middleware('only.admin');
 Route::get('/admin/teachers', [AdminController::class, 'teachers'])->middleware('only.admin');
+Route::get('/admin/make-teacher/{user_id}', [AdminController::class, 'makeTeacher'])->middleware('only.admin');
 Route::get('/admin/classes', [AdminController::class, 'classes'])->middleware('only.admin');
 Route::get('/admin/classes/{class_id}', [AdminController::class, 'class'])->middleware('only.admin');
 Route::get('/admin/all/{user_id}', [AdminController::class, 'list'])->middleware('only.admin');
