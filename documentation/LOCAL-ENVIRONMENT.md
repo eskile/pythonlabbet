@@ -38,6 +38,13 @@ Nu ska allt vara klart och du kan köra
 
 Läs mer om [Laravel Sail](https://laravel.com/docs/8.x/sail)
 
+### Test
+Det finns ett antal Browser-tests som använder Dusk. Kör dem med `./vendor/bin/sail artisan dusk`. Du behöver köra `./vendor/bin/sail artisan dusk:install` först. 
+
+Lägg också till `laravel.test` som en host för 127.0.0.1. På Linux/Mac görs ändras det i `/etc/hosts`. På Windows är det i `C:\Windows\System32\drivers\etc\hosts`. Lägg till följande rad:
+
+`127.0.0.1 laravel.test`
+
 ## Andra metoder
 För Mac OS finns [Laravel Valet](https://laravel.com/docs/8.x/valet) och för Windows/Linux finns [Laravel Homestead](https://laravel.com/docs/8.x/homestead).
 
