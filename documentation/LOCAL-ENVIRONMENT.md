@@ -1,5 +1,5 @@
 # Att sätta upp en lokal utvecklingsmiljö
-Den rekommenderade metoden är att använda Docker och Laravel Sail. 
+Den rekommenderade metoden är att använda Docker och Laravel Sail. Nedanstående är främst testat på Linux men bör därmed fungera med WSL 2.0 i Windows också. Det bör fungera för mac OS också.
 
 ## Docker
 
@@ -9,7 +9,7 @@ Du behöver ha dessa två verktyg installerade på din dator:
 
 1. Använd git för att hämta pythonlabbet-repot från github. 
 
-2. Kopiera .env.copy till .env i `/src`.
+2. Kopiera .env.copy till .env i `/src`. I filen .env kan du ändra/sätta lokala inställningar om det skulle behövas, bör dock inte behövas.
 
 3. För att kunna använda [Laravel Sail](https://laravel.com/docs/10.x/sail#installing-sail-into-existing-applications) behöver du antingen installera PHP8.2 och composer lokalt (och köra `composer install --ignore-platform-reqs`), eller så kör du nedanstående kommando som använder Docker för att sätta upp Laravel med vendors-mappen. Arbeta från `/src`-foldern.
 
@@ -22,15 +22,22 @@ docker run --rm \
     composer install --ignore-platform-reqs
 ```
 
-(Det är bra om du kan köra docker utan sudo / administratör, det kan bli problem med filrättigheter senare annars).
-
 Om det uppstår problem i det här steget, prova att googla eller att starta en diskussion här på pythonlabbet-repot så försöker vi lösa det.
 
-4. Från `/src` bör du nu kunna köra följande kommando:
+4. Om du är på Linux kan du börja med att sätta följande miljövariabler:
 
-(Om du måste köra docker som sudo / root / admin så prova sätt WWWGROUP och WWWUSER i .env till samma id som din användare är, kör `id` i Linux)
+```
+export APP_PORT=${APP_PORT:-80}
+export APP_SERVICE=${APP_SERVICE:-"laravel.test"}
+export DB_PORT=${DB_PORT:-3306}
+export WWWUSER=${WWWUSER:-$UID}
+export WWWGROUP=${WWWGROUP:-$(id -g)}
+```
+Det är inte alltid nödvändigt dock. Om du får problem med filrättigheter är de två sista särskilt viktiga att få rätt på. Om du får problmem med filrättigheter läs mer här: [Laravel sail issue 81](https://github.com/laravel/sail/issues/81)
 
-```./vendor/bin/sail up``` - starta upp alla docker containers
+Från `/src` bör du nu kunna köra följande kommando:
+
+```./vendor/bin/sail up``` - starta upp alla docker containers (tar en flera minuter första gången)
 
 ```./vendor/bin/sail artisan migrate``` - skapar tabeller i databasen
 
@@ -40,10 +47,10 @@ Om det uppstår problem i det här steget, prova att googla eller att starta en 
 
 ```./vendor/bin/sail npm run dev``` - skapar app.js och app.css
 
-Nu ska det fungera att komma åt Pythonlabbet på [127.0.0.1](http://127.0.0.1)! Se nedan för att kunna använda `laravel.test`.
+Nu ska det fungera att komma åt Pythonlabbet på [127.0.0.1](http://127.0.0.1)! Se nedan för att kunna använda `laravel.test` istället (ändra i hosts).
 
 Senare räcker det att skriva
-```./vendor/bin/sail up``` för att starta och sedan komma åt din lokala Pythonlabbet på [0.0.0.0](http://0.0.0.0)
+```./vendor/bin/sail up``` för att starta och sedan komma åt din lokala Pythonlabbet på [127.0.0.01](http://127.0.0.1)
 
 Läs mer om [Laravel Sail](https://laravel.com/docs/8.x/sail)
 
