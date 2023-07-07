@@ -1,3 +1,9 @@
+This file includes code snippets that are handy during development.
+
+****************************
+*   NEW SECTION TEMPLATE   *
+****************************
+
 @extends('template-section')
 @section('title', 'Enkla beräkningar i Python')
 @section('description', 'Lär dig om de vanligaste operatorerna i Python, som addition, subtraktion, multiplikation, heltalsdivision och rest.')
@@ -13,10 +19,18 @@
 @endsection
 
 
+*********************
+*   MATH FORMULAS   *
+*********************
+
 $$2^{1000}$$ mathjax
 \(2^{1000}\) mathjax inline
 
-* Länk *
+
+****************************
+*   HTML LINK AND VIDEO    *
+****************************
+
 <a target="_tab" class="text-green-500 hover:underline" href="https://docs.python.org/3/tutorial/floatingpoint.html">se här på python.org</a>
 <a class="text-green-500 hover:underline" href=""></a>
 
@@ -24,7 +38,11 @@ $$2^{1000}$$ mathjax
     <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/0N8Lray6MKw" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-*** EXAMPLE ***
+
+****************************
+*   EXAMPLE IN SECTION     *
+****************************
+
 <div class="bg-green-100 p-8 mb-4">
   <h3 class="text-2xl">Exempel</h3>
   <p></p>
@@ -38,7 +56,9 @@ $$2^{1000}$$ mathjax
 </div>
 
 
-*** QUIZ ***
+****************************
+*   QUIZ IN SECTION        *
+****************************
 <?php $code = trim(json_encode("print('4' + '2')
 print(4 + 2)"), '"');?>
 @livewire('editor-quiz', [
@@ -51,7 +71,10 @@ print(4 + 2)"), '"');?>
 ])
 
 
-*** MODIFY ***
+****************************
+*   MODIFY IN SECTION      *
+****************************
+
 <?php $code = json_encode( array("print(1000 / 3)") );?>
 @livewire('editor-modify', [
     'editorId' => 'simple_calc_modify',
@@ -61,7 +84,11 @@ print(4 + 2)"), '"');?>
     'text' => 'Ändra i koden så att en heltalsdivision utförs istället för vanlig division.'
 ])
 
-*** MODIFY CORRECT (with input) ***
+
+****************************
+*   MODIFY WITH INPUT      *
+****************************
+
 <?php 
 $correctInput = json_encode( array(array("42"), array("101")) );
 $correctOutput = json_encode( array(array("Test av tal"), array("Test av tal", "Ditt tal är större än 100.")) );
@@ -77,7 +104,9 @@ $code = json_encode( array("print('Test av tal')", "tal = input('Skriv in ett he
 ])
 
 
-*** MAKE CORRECT with input (still using modify) ***
+*******************************************************
+*   MAKE CORRECT with input (still using modify)      *
+*******************************************************
 
 <?php 
 $correctInput = json_encode( array(array("2.0", "1.1")) );
@@ -96,7 +125,11 @@ $correctOutput = json_encode( array(array("1.1") ));
     Programmet ska klara av decimaltal.'
 ])
 
-*** MAKE ***
+
+*******************
+*   MAKE TASK     *
+*******************
+
 @livewire('editor-make', [
     'editorId' => 'print_create', 
     'task' => 'Skriv kod som skriver ut <b>Just nu är det år</b> på första raden och <b>'.date("Y").'</b> det är på andra raden.', 
@@ -104,13 +137,26 @@ $correctOutput = json_encode( array(array("1.1") ));
     'correctAnswer' => array("Just nu är det år", date("Y"))
 ])
 
+
+************************************
+*   PROGRESS AT END OF SECTION     *
+************************************
+
 @livewire('progress', ['section' => Route::current()->getName() ])
+
+
+*******************
+*   EASY MODE     *
+*******************
 
 @if(request()->session()->get('easy_mode'))
 EASY MODE ÄR AKTIVERAT!
 @endif
 
-*** PROBLEM ***
+
+**************************
+*   PROBLEM EXAMPLE      *
+**************************
 @extends('template-problem')
 @section('title', 'Problemlösning: Träna multiplikationstabellen')
 @section('description', 'Skriv ett program i Python som tränar användaren i vald multiplikationstabell.')
@@ -143,10 +189,6 @@ EASY MODE ÄR AKTIVERAT!
     </div>
 </div>
 
-New problems:
-https://csunplugged.org/en/plugging-it-in/binary-numbers/how-binary-digits-work/#python
-https://csunplugged.org/en/plugging-it-in/kidbots/modulo/#python
-
 <?php 
 $correctInput = json_encode( array(array("4", "1", "16"), array("4", "1", "15"), array("9", "2", "36","90")) );
 $correctOutput = json_encode( array(array("4*4=","16 Rätt","Du klarade 1 av 1"), array("4*4=","15 Fel","Du klarade 0 av 1"), array("4*9=","36 Rätt","10*9=","90 Rätt", "Du klarade 2 av 2") ));
@@ -164,3 +206,7 @@ $correctOutput = json_encode( array(array("4*4=","16 Rätt","Du klarade 1 av 1")
 ])
 
 @endsection
+
+New problems:
+https://csunplugged.org/en/plugging-it-in/binary-numbers/how-binary-digits-work/#python
+https://csunplugged.org/en/plugging-it-in/kidbots/modulo/#python
