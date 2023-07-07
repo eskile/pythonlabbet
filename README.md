@@ -17,6 +17,9 @@ En lärardel kan användas av lärare för att skapa klasser, se elevernas kod o
 
 Se [pythonlabbet.se](https://pythonlabbet.se)
 
+## Om open source
+Att Pythonlabbet är open source innebär att all kod som berör sajten finns tillgänglig för alla och alla kan föreslå förändringar. Det betyder **inte** att datan är tillgänglig för alla, den är endast tillgänglig för mig som driver pythonlabbet.se.
+
 ## Bidra till Pythonlabbet
 Det finns många sätt att hjälpa till att förbättra Pythonlabbet! Från enkla saker som att fixa stavfel, lite svårare som att göra nya problem och nya kurser till svåra som att förbättra själva systemet.
 
@@ -33,6 +36,13 @@ En PR öppnas för att göra ändring i koden. Börja med att göra din första 
 5. När den är godkänd av en administratör har du gjort din första ändring.
 
 På samma sätt kan du göra om du till exempel hittat ett stavfel som behöver fixas. Eller om det finns förklarande text i ett avsnitt som kan göras bättre.
+
+### Ändra i ett innehållet
+Det går bra att ändra i ett avsnitt utan att sätta upp en egen utvecklingsmiljö. Se ovan hur du skapar en PR. 
+
+Filerna ligger under `/src/resources/views`. Till exempel ligger första avsnittet om while-satsen i Grundkurs del 1 här: `/src/resources/views/basics/while.blade.php`.
+
+Om du vill ändra i ett problem så ligger de filerna under `/src/resources/views/problems`.
 
 ### Sätt upp en utvecklingsmiljö lokalt
 Om du vill lägga upp nya problem eller kanske en helt ny kurs så är det en stor fördel att kunna testa lokalt på sin egen dator i en lokal utvecklingsmiljö.

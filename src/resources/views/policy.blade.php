@@ -36,4 +36,7 @@ Kontakta oss för att ta bort ditt konto.</p>
 Pythonlabbet använder inget statistikverktyg (som exempelvis Google Analytics) på sajten eftersom de flesta inte respekterar användares integritet.
 </p>
 
+<h2>PUB-avtal</h2>
+<p>Användning av Pythonlabbet är gratis. Det finns möjlighet för kommuner att teckna PUB-avtal med Pythonlabbet. Kostnad för det är en engångskostnad på 3000 kr.</p>
+
 @endsection

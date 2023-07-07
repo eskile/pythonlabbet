@@ -58,7 +58,6 @@
 <h2>Skapa lärarkonto</h2>
 <p>Skapa ett vanligt konto och ta kontakt på <em>info@pythonlabbet.se</em> för att slutföra ett lärarkonto.
 Pythonlabbet är reklamfritt och är <b>gratis</b> tack vare sponsring från <a class="text-green-500 hover:underline" href="https://hyrbil24.se">hyrbil24.se</a>.</p>
-<p>Planen är att göra Pythonlabbet <b>open source</b> under sommaren 2023 så att alla intresserade lärare kan hjälpa till att utveckla sajten.</p>
 
 <h2>Om lärardelen</h2>
 
@@ -72,6 +71,9 @@ Som verifierad lärare finns ett antal funktioner för att förenkla arbetet med
     <li>Ändra lösenord för dina elever</li>
 </ul>
 
+<p>Observa att Pythonlabbet endast stödjer en lärare per klass. Om ni är flera lärare så är det bäst att dela ett lärarkonto.
+    Det går bra att vara inloggad på mer än en dator samtidigt.</p>
+
 <h3 class="text-lg"><b>Översiktsmatris över klara avsnitt</b></h3>
 <p>För varje klass finns en matris som visar vilka elever som är klara med vilka avsnitt. I bilden nedan visas ett litet exempel.</p>
 <div class="mb-5"><img class="mx-auto" src="/img/teacher-matrix.png"></div>
@@ -80,9 +82,17 @@ Som verifierad lärare finns ett antal funktioner för att förenkla arbetet med
 <p>För att förenkla processen att skapa konto finns en funktion för att skapa många konton på en gång. 
 Det finns <b>inget krav på att använda riktiga eller hela namn</b> eller riktiga e-postadresser vid kontoskapandet. 
 Det går utmärkt att låta systemet skapa e-postadresser på formen <em>namn@skola.pythonlabbet.se</em>.
-Läraren kan också få alla lösenord (enkla) automatiskt skapade. 
+Läraren kan också få alla (enkla) lösenord automatiskt skapade. 
 Om lösenordet försvinner vid något tillfälle finns också möjlighet för läraren att enkelt ändra en elevs lösenord.
 </p>
 @endif
 
+<h2 class="mt-5">Open source</h2>
+<p>Pythonlabbet är nu ett open source-projekt. Vill du vara med och bidra till att göra Pythonlabbet bättre? På Pythonlabbets github-sida finns mer information
+    om hur du går tillväga. Det är enkelt att göra mindre ändringar! Dessutom ett utmärkt sätt för programmeringslärare att få en inblick i hur open source fungerar.</p>
+<p>Börja redan idag med att lägga till ditt namn i filen I_WAS_HERE!</p>
+<p>Att Pythonlabbet är open source innebär att all kod som berör sajten finns tillgänglig för alla och alla kan föreslå förändringar. Det betyder inte att datan är tillgänglig för alla, den är endast tillgänglig för de som driver pythonlabbet.se.</p>
+<p>
+<a class="text-green-500 hover:underline" href="https://github.com/darth83/pythonlabbet">Pythonlabbets repo på github</a>
+</p>
 @endsection
