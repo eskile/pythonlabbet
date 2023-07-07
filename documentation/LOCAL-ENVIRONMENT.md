@@ -9,7 +9,9 @@ Du behöver ha dessa två verktyg installerade på din dator:
 
 1. Använd git för att hämta pythonlabbet-repot från github. 
 
-2. För att kunna använda [Laravel Sail](https://laravel.com/docs/10.x/sail#installing-sail-into-existing-applications) behöver du antingen installera PHP8.2 och composer lokalt (och köra `composer install --ignore-platform-reqs`), eller så kör du nedanstående kommando som använder Docker för att sätta upp Laravel med vendors-mappen. Arbeta från `/src`-foldern.
+2. Kopiera .env.copy till .env i `/src`.
+
+3. För att kunna använda [Laravel Sail](https://laravel.com/docs/10.x/sail#installing-sail-into-existing-applications) behöver du antingen installera PHP8.2 och composer lokalt (och köra `composer install --ignore-platform-reqs`), eller så kör du nedanstående kommando som använder Docker för att sätta upp Laravel med vendors-mappen. Arbeta från `/src`-foldern.
 
 ```
 docker run --rm \
@@ -20,9 +22,13 @@ docker run --rm \
     composer install --ignore-platform-reqs
 ```
 
+(Det är bra om du kan köra docker utan sudo / administratör, det kan bli problem med filrättigheter senare annars).
+
 Om det uppstår problem i det här steget, prova att googla eller att starta en diskussion här på pythonlabbet-repot så försöker vi lösa det.
 
-3. Från `/src` bör du nu kunna köra följande kommando:
+4. Från `/src` bör du nu kunna köra följande kommando:
+
+(Om du måste köra docker som sudo / root / admin så prova sätt WWWGROUP och WWWUSER i .env till samma id som din användare är, kör `id` i Linux)
 
 ```./vendor/bin/sail up``` - starta upp alla docker containers
 
@@ -34,7 +40,7 @@ Om det uppstår problem i det här steget, prova att googla eller att starta en 
 
 ```./vendor/bin/sail npm run dev``` - skapar app.js och app.css
 
-Nu ska det fungera att komma åt Pythonlabbet på [127.0.0.1](http://127.0.0.1)! 
+Nu ska det fungera att komma åt Pythonlabbet på [127.0.0.1](http://127.0.0.1)! Se nedan för att kunna använda `laravel.test`.
 
 Senare räcker det att skriva
 ```./vendor/bin/sail up``` för att starta och sedan komma åt din lokala Pythonlabbet på [0.0.0.0](http://0.0.0.0)
