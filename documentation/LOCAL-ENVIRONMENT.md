@@ -33,7 +33,8 @@ export DB_PORT=${DB_PORT:-3306}
 export WWWUSER=${WWWUSER:-$UID}
 export WWWGROUP=${WWWGROUP:-$(id -g)}
 ```
-Det är inte alltid nödvändigt dock. Om du får problem med filrättigheter är de två sista särskilt viktiga att få rätt på. Om du får problmem med filrättigheter läs mer här: [Laravel sail issue 81](https://github.com/laravel/sail/issues/81)
+Det är inte alltid nödvändigt dock. Om du får problem med filrättigheter är de två sista särskilt viktiga att få rätt på. Läs mer om
+filrättighetsproblem här ifall du inte får rätt på det: [Laravel sail issue 81](https://github.com/laravel/sail/issues/81)
 
 Från `/src` bör du nu kunna köra följande kommando:
 
