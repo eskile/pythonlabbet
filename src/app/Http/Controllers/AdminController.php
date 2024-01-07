@@ -209,7 +209,25 @@ class AdminController extends Controller
     }
 
     public function usersPaginated(Request $request) {
+        if(isset($request->phrase)) {
+            $users = DB::table('users')
+                ->where('name', 'LIKE', "%{$request->phrase}%")
+                ->orWhere('email', 'LIKE', "%{$request->phrase}%")
+                ->orderBy('created_at', 'DESC')
+                ->simplePaginate(100);
+            return view('admin/users', ['users' => $users]);
+        }
+        
         $users = DB::table('users')->orderBy('created_at', 'DESC')->simplePaginate(100);
+        return view('admin/users', ['users' => $users]);
+    }
+
+    public function usersSearch(Request $request) {
+        $users = DB::table('users')
+            ->where('name', 'LIKE', "%{$request->phrase}%")
+            ->orWhere('email', 'LIKE', "%{$request->phrase}%")
+            ->orderBy('created_at', 'DESC')
+            ->simplePaginate(100);
         return view('admin/users', ['users' => $users]);
     }
 

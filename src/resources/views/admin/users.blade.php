@@ -10,6 +10,11 @@
     }
 </style>
 
+<form action="/admin/users" method="get">
+    <input type="text" name="phrase" class="border" placeholder="Namn eller e-post...">
+    <button type="submit" class="border border-green-600 bg-green-600 text-white px-4 py-2 mt-2 select-none hover:bg-green-700 focus:outline-none focus:ring modal-open">Sök</button>
+</form>
+
 <table class="mb-5" style="width:100%">
     <tr>
         <th>Skapad</th>
